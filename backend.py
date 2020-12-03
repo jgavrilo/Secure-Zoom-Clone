@@ -11,6 +11,14 @@ PASSWORD_LEN = 32
 guestPasswords = []       #will remember guests passwords, ordered as a tuple of (pos, email, pass)   or (int, str, str)
 currGuest = 0
 
+"""
+getting argument:
+if (os.argv[1] == 'CallMe'):
+    CallMe()
+    
+def CallMe():
+    print("Hello World")
+"""
 
 def sendEmail(email):
     #sends email to their email (entered in parameter)
