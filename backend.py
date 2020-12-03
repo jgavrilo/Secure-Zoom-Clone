@@ -97,15 +97,6 @@ def inBlockList(ip):
 """
 
 def putPassNextIP(password, ip):
-    """
-    with open(IPLIST) as input, open("ip_Pass.txt", "a") as output:
-        for line in input:
-            if line.startswith(ip):
-                output.write(str(tuple(line.split()))+ "\t" + password + "\n")
-            else:
-                output.write(str(tuple(line.split())) + "\n")
-    """      
-    
     global database
     database.close()
     if not validateUserIP(ip):
@@ -133,9 +124,6 @@ def blockUser(ip):
     val = removeIP(ip)
     blockSheet.close()
     return val
-
-def removeUser(key):
-    pass
 
 def addIP(ip):
     #adds IP to DB
