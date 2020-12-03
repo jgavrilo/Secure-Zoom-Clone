@@ -76,18 +76,6 @@
     document.getElementById('close').addEventListener("click", function() {
 	    document.querySelector('.bg-modal').style.display = "none";
     });
-
-    function sendEmail() {
-      var name = getElementById(name)
-      var email = getElementById(email)
-      var link = "mailto:", email
-        + "jgavrilo@syr.edu"
-        + "&subject=" + encodeURIComponent("This is my subject")
-        + "&body=" + encodeURIComponent(document.getElementById('myText').value)
-      ;
-    
-      window.location.href = link;
-    }
   </script>
 
   <div id="video-grid"></div>
@@ -101,7 +89,7 @@
 		<form method="post">
 			<input type="text" placeholder="Name" id="name">
 			<input type="email" placeholder="E-Mail" id="email">
-			<input type="button" value="Send Email" onclick="sendEmail(); return false"/>
+			<input type="button" value="Send Email"/>
 		</form>
 
 	</div>
