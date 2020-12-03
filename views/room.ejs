@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script>
+   const ROOM_ID = "<%= roomId %>"
+  </script>
+  <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="script.js" defer></script>  
+  <title>Zoom Clone Video Chat</title>
+  <style>
+    #video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 300px);
+      grid-auto-rows: 300px;
+    }
+    
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .bg-modal {
+	    background-color: rgba(0, 0, 0, 0.8);
+	    width: 100%;
+	    height: 100%;
+	    position: absolute;
+	    top: 0;
+	    display: none;
+	    justify-content: center;
+	    align-items: center;
+    }
+
+    .modal-contents {
+	    height: 300px;
+	    width: 500px;
+	    background-color: white;
+	    text-align: center;
+	    padding: 20px;
+	    position: relative;
+	    border-radius: 4px;
+    }
+
+    input {
+	    margin: 15px auto;
+	    display: block;
+	    width: 50%;
+	    padding: 8px;
+	    border: 1px solid gray;
+    }
+
+    .close {
+	    position: absolute;
+	    top: 0;
+	    right: 10px;
+	    font-size: 42px;
+	    color: black;
+	    transform: rotate(45deg);
+	    cursor: pointer;
+    }
+  </style>
+</head>
+<body style="background-color: lightblue;">
+  <h1> Room ID = <%= roomId %> </h1>
+  <button href="#" id="button">Add New User To Meeting Room</button>
+  <br></br>
+  <script>
+    document.getElementById('button').addEventListener("click", function() {
+	    document.querySelector('.bg-modal').style.display = "flex";
+    });
+
+    document.getElementById('close').addEventListener("click", function() {
+	    document.querySelector('.bg-modal').style.display = "none";
+    });
+
+    function sendEmail() {
+      var name = getElementById(name)
+      var email = getElementById(email)
+      var link = "mailto:", email
+        + "jgavrilo@syr.edu"
+        + "&subject=" + encodeURIComponent("This is my subject")
+        + "&body=" + encodeURIComponent(document.getElementById('myText').value)
+      ;
+    
+      window.location.href = link;
+    }
+  </script>
+
+  <div id="video-grid"></div>
+</body>
+
+<div class="bg-modal">
+	<div class="modal-contents">
+
+    <a href="" id="close" class="close">+</a>
+		<h1>Invite User</h1>
+		<form method="post">
+			<input type="text" placeholder="Name" id="name">
+			<input type="email" placeholder="E-Mail" id="email">
+			<input type="button" value="Send Email" onclick="sendEmail(); return false"/>
+		</form>
+
+	</div>
+</div>
+</html>
