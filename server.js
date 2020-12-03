@@ -8,6 +8,7 @@ var path = require('path');
 const spawn = require('child_process').spawn;
 
 const childPython = spawn('python', ['backend.py']);
+//const childPython = spawn('python', ['backend.py', 'arg1', 'arg2', ...]);
 
 childPython.stdout.on('data', (data) => {
     console.log(data.toString());
