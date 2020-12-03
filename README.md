@@ -1,4 +1,6 @@
 # Secure-Zoom-Clone
+First make sure you have node.js installed https://nodejs.org/en/ <br />
+
 In one terminal go to the project directory and implement the following commands: <br />
 npm i express ejs socket.io <br />
 npm i uuid <br />
