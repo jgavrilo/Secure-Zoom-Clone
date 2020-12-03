@@ -5,6 +5,14 @@ const io = require('socket.io')(server)
 const { v4: uuidV4 } = require('uuid')
 var path = require('path');
 
+const spawn = require('child_process').spawn;
+
+const childPython = spawn('python', ['backend.py']);
+
+childPython.stdout.on('data', (data) => {
+    console.log(data.toString());
+});
+
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
