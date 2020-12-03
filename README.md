@@ -20,3 +20,5 @@ npm install<br />
 peerjs --port 3001<br />
 
 This allows other users to joing the room and communicate with people in it<br />
+
+The application can now be used through localhost:3000/
